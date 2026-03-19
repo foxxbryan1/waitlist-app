@@ -38,44 +38,47 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center px-4 py-20">
+    <main className="min-h-screen flex flex-col items-center justify-center px-4 py-20 bg-[#0d0d12]">
       <div className="w-full max-w-md">
-        {/* Badge */}
+        {/* Tagline badge */}
         <div className="flex justify-center mb-6">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-700 ring-1 ring-indigo-200">
-            <span className="h-1.5 w-1.5 rounded-full bg-indigo-500" />
-            Coming Soon
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-purple-950 px-3 py-1 text-xs font-medium text-purple-300 ring-1 ring-purple-700">
+            <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
+            Now in private beta
           </span>
         </div>
 
         {/* Headline */}
-        <h1 className="text-4xl font-extrabold tracking-tight text-center text-gray-900 mb-4">
-          Get early access before everyone else
+        <h1 className="text-4xl font-extrabold tracking-tight text-center text-white mb-4 leading-tight">
+          Marketing that thinks{" "}
+          <span className="bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">
+            for itself
+          </span>
         </h1>
-        <p className="text-center text-gray-500 mb-10 leading-relaxed">
-          We&apos;re building something you&apos;ll love. Join the waitlist and
-          be the first to know when we launch — no spam, ever.
+        <p className="text-center text-gray-400 mb-10 leading-relaxed">
+          Launchly uses AI to write your campaigns, schedule your posts, and
+          grow your audience — automatically.
         </p>
 
         {status === "success" ? (
-          <div className="rounded-2xl bg-green-50 border border-green-200 p-6 text-center">
+          <div className="rounded-2xl bg-purple-950/60 border border-purple-800 p-6 text-center">
             <div className="text-3xl mb-2">🎉</div>
-            <p className="font-semibold text-green-800 text-lg">
+            <p className="font-semibold text-purple-200 text-lg">
               You&apos;re on the list!
             </p>
-            <p className="text-green-600 text-sm mt-1">
+            <p className="text-purple-400 text-sm mt-1">
               We&apos;ll be in touch when we launch.
             </p>
           </div>
         ) : (
           <form
             onSubmit={handleSubmit}
-            className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 space-y-5"
+            className="bg-[#16161f] rounded-2xl border border-white/10 p-8 space-y-5 shadow-xl shadow-black/40"
           >
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-medium text-gray-700 mb-1.5"
+                className="block text-sm font-medium text-gray-300 mb-1.5"
               >
                 Full Name
               </label>
@@ -86,14 +89,14 @@ export default function Home() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Jane Smith"
-                className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition"
+                className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white placeholder-gray-600 outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition"
               />
             </div>
 
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700 mb-1.5"
+                className="block text-sm font-medium text-gray-300 mb-1.5"
               >
                 Email Address
               </label>
@@ -104,12 +107,12 @@ export default function Home() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="jane@example.com"
-                className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition"
+                className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white placeholder-gray-600 outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition"
               />
             </div>
 
             {status === "error" && (
-              <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-3 py-2">
+              <p className="text-sm text-red-400 bg-red-950/50 border border-red-800 rounded-lg px-3 py-2">
                 {errorMsg}
               </p>
             )}
@@ -117,12 +120,12 @@ export default function Home() {
             <button
               type="submit"
               disabled={status === "loading"}
-              className="w-full rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700 active:scale-[0.98] transition disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full rounded-lg bg-purple-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-purple-500 active:scale-[0.98] transition disabled:opacity-60 disabled:cursor-not-allowed shadow-lg shadow-purple-900/40"
             >
-              {status === "loading" ? "Joining…" : "Join the Waitlist"}
+              {status === "loading" ? "Joining…" : "Join the waitlist"}
             </button>
 
-            <p className="text-center text-xs text-gray-400">
+            <p className="text-center text-xs text-gray-600">
               No spam. Unsubscribe anytime.
             </p>
           </form>
