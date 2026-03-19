@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx:*)",
+      "Bash(sudo chmod:*)",
+      "Bash(npm_config_cache=/tmp/npm-cache npx create-next-app@latest /Users/foxxbryan/Desktop/waitlist-app --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --yes 2>&1)",
+      "Bash(npm_config_cache=/tmp/npm-cache npm init -y 2>&1)",
+      "Bash(npm_config_cache=/tmp/npm-cache npm install 2>&1)",
+      "Bash(npm_config_cache=/tmp/npm-cache npx next build 2>&1)"
+    ]
+  }
+}
