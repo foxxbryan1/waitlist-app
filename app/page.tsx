@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function Home() {
   const [name, setName] = useState("");
@@ -8,6 +8,27 @@ export default function Home() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const [position, setPosition] = useState<number | null>(null);
+  const [displayPosition, setDisplayPosition] = useState(0);
+  const rafRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    if (status === "success" && position !== null && position > 0) {
+      const duration = 600;
+      const start = performance.now();
+      const animate = (now: number) => {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        // ease-out cubic
+        const eased = 1 - Math.pow(1 - progress, 3);
+        setDisplayPosition(Math.round(eased * position));
+        if (progress < 1) {
+          rafRef.current = requestAnimationFrame(animate);
+        }
+      };
+      rafRef.current = requestAnimationFrame(animate);
+      return () => { if (rafRef.current) cancelAnimationFrame(rafRef.current); };
+    }
+  }, [status, position]);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -75,7 +96,7 @@ export default function Home() {
             </p>
             {position !== null && (
               <p className="text-4xl font-black bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent my-3">
-                #{position} on the list
+                #{displayPosition} on the list
               </p>
             )}
             <p className="text-purple-400 text-sm mt-1">
