@@ -165,7 +165,37 @@ export default function Home() {
         )}
       </div>
 
-      <footer className="mt-16 border-t border-white/10 pt-6 w-full max-w-md text-center">
+      {/* Feature cards */}
+      <div className="w-full max-w-2xl mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {[
+          {
+            icon: "✦",
+            title: "AI Copywriting",
+            desc: "Generate campaign copy, emails, and ads in seconds",
+          },
+          {
+            icon: "◷",
+            title: "Auto Scheduling",
+            desc: "Post to every channel at the perfect time automatically",
+          },
+          {
+            icon: "◈",
+            title: "Audience Insights",
+            desc: "Know exactly who to target and when to reach them",
+          },
+        ].map(({ icon, title, desc }) => (
+          <div
+            key={title}
+            className="rounded-xl bg-[#16161f] border border-white/8 px-5 py-5"
+          >
+            <span className="text-purple-400 text-base leading-none">{icon}</span>
+            <p className="mt-3 text-sm font-semibold text-white">{title}</p>
+            <p className="mt-1 text-xs text-gray-500 leading-relaxed">{desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <footer className="mt-10 border-t border-white/10 pt-6 w-full max-w-2xl text-center">
         <p className="text-xs text-gray-600">© 2026 Launchly Inc. All rights reserved.</p>
       </footer>
     </main>
