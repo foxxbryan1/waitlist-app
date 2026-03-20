@@ -112,8 +112,8 @@ export default function AdminPage() {
 
   if (authLoading) {
     return (
-      <main className="min-h-screen flex items-center justify-center">
-        <div className="text-gray-400 text-sm">Loading…</div>
+      <main className="min-h-screen flex items-center justify-center bg-[#0d0d12]">
+        <div className="text-gray-500 text-sm">Loading…</div>
       </main>
     );
   }
@@ -121,27 +121,27 @@ export default function AdminPage() {
   // Not logged in — show login form
   if (!user) {
     return (
-      <main className="min-h-screen flex flex-col items-center justify-center px-4">
+      <main className="min-h-screen flex flex-col items-center justify-center px-4 bg-[#0d0d12]">
         <div className="w-full max-w-sm">
-          <h1 className="text-2xl font-bold text-center mb-2">Admin Login</h1>
-          <p className="text-center text-gray-500 text-sm mb-8">
-            Enter your email to receive a magic link.
-          </p>
+          <div className="text-center mb-8">
+            <h1 className="text-3xl font-bold tracking-tight text-white mb-1">Launchly</h1>
+            <p className="text-sm text-purple-400">Admin Dashboard</p>
+          </div>
 
           {magicLinkSent ? (
-            <div className="rounded-xl bg-green-50 border border-green-200 p-5 text-center">
-              <p className="font-semibold text-green-800">Check your inbox!</p>
-              <p className="text-green-600 text-sm mt-1">
+            <div className="rounded-xl bg-purple-950/60 border border-purple-800 p-5 text-center">
+              <p className="font-semibold text-white">Check your inbox!</p>
+              <p className="text-purple-400 text-sm mt-1">
                 We sent a login link to <strong>{email}</strong>.
               </p>
             </div>
           ) : (
             <form
               onSubmit={handleSendMagicLink}
-              className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 space-y-4"
+              className="bg-[#16161f] rounded-2xl border border-white/10 p-6 space-y-4 shadow-xl shadow-black/40"
             >
               <div>
-                <label htmlFor="admin-email" className="block text-sm font-medium text-gray-700 mb-1.5">
+                <label htmlFor="admin-email" className="block text-sm font-medium text-gray-300 mb-1.5">
                   Email Address
                 </label>
                 <input
@@ -151,12 +151,12 @@ export default function AdminPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="admin@example.com"
-                  className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition"
+                  className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white placeholder-gray-600 outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition"
                 />
               </div>
 
               {loginError && (
-                <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-3 py-2">
+                <p className="text-sm text-red-400 bg-red-950/50 border border-red-800 rounded-lg px-3 py-2">
                   {loginError}
                 </p>
               )}
@@ -164,7 +164,7 @@ export default function AdminPage() {
               <button
                 type="submit"
                 disabled={loginLoading}
-                className="w-full rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700 transition disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full rounded-lg bg-purple-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-purple-500 transition disabled:opacity-60 disabled:cursor-not-allowed shadow-lg shadow-purple-900/40"
               >
                 {loginLoading ? "Sending…" : "Send Magic Link"}
               </button>
@@ -177,34 +177,34 @@ export default function AdminPage() {
 
   // Logged in — show dashboard
   return (
-    <main className="min-h-screen bg-gray-50 px-4 py-10">
+    <main className="min-h-screen bg-[#0d0d12] px-4 py-10">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">Waitlist Admin</h1>
-            <p className="text-sm text-gray-500 mt-0.5">{user.email}</p>
+            <h1 className="text-2xl font-bold tracking-tight text-white">Launchly</h1>
+            <p className="text-sm text-purple-400 mt-0.5">Admin Dashboard</p>
           </div>
           <button
             onClick={handleSignOut}
-            className="text-sm text-gray-500 hover:text-gray-800 transition"
+            className="text-sm text-gray-500 hover:text-gray-300 transition"
           >
             Sign out
           </button>
         </div>
 
         {/* Stats + Export */}
-        <div className="flex items-center justify-between bg-white rounded-2xl border border-gray-100 shadow-sm px-6 py-4 mb-6">
+        <div className="flex items-center justify-between bg-[#16161f] rounded-2xl border border-white/10 px-6 py-4 mb-6">
           <div>
-            <p className="text-xs font-medium uppercase tracking-wider text-gray-400 mb-0.5">
+            <p className="text-xs font-medium uppercase tracking-wider text-purple-400 mb-0.5">
               Total Signups
             </p>
-            <p className="text-3xl font-bold text-gray-900">{signups.length}</p>
+            <p className="text-3xl font-bold text-white">{signups.length}</p>
           </div>
           <button
             onClick={exportCSV}
             disabled={signups.length === 0}
-            className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700 transition disabled:opacity-40 disabled:cursor-not-allowed"
+            className="inline-flex items-center gap-2 rounded-lg bg-purple-600 px-4 py-2 text-sm font-semibold text-white hover:bg-purple-500 transition disabled:opacity-40 disabled:cursor-not-allowed shadow-lg shadow-purple-900/40"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -214,17 +214,17 @@ export default function AdminPage() {
         </div>
 
         {/* Table */}
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+        <div className="bg-[#16161f] rounded-2xl border border-white/10 overflow-hidden">
           {dataLoading ? (
-            <div className="p-12 text-center text-gray-400 text-sm">Loading signups…</div>
+            <div className="p-12 text-center text-gray-500 text-sm">Loading signups…</div>
           ) : dataError ? (
-            <div className="p-12 text-center text-red-500 text-sm">{dataError}</div>
+            <div className="p-12 text-center text-red-400 text-sm">{dataError}</div>
           ) : signups.length === 0 ? (
-            <div className="p-12 text-center text-gray-400 text-sm">No signups yet.</div>
+            <div className="p-12 text-center text-gray-500 text-sm">No signups yet.</div>
           ) : (
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-100 bg-gray-50">
+                <tr className="border-b border-white/10 bg-white/5">
                   <th className="text-left px-6 py-3 font-medium text-gray-500">#</th>
                   <th className="text-left px-6 py-3 font-medium text-gray-500">Name</th>
                   <th className="text-left px-6 py-3 font-medium text-gray-500">Email</th>
@@ -235,12 +235,12 @@ export default function AdminPage() {
                 {signups.map((signup, i) => (
                   <tr
                     key={signup.id}
-                    className="border-b border-gray-50 hover:bg-gray-50 transition-colors"
+                    className="border-b border-white/5 hover:bg-white/5 transition-colors"
                   >
-                    <td className="px-6 py-3 text-gray-400">{i + 1}</td>
-                    <td className="px-6 py-3 font-medium text-gray-900">{signup.name}</td>
-                    <td className="px-6 py-3 text-gray-600">{signup.email}</td>
-                    <td className="px-6 py-3 text-gray-400">
+                    <td className="px-6 py-3 text-gray-600">{i + 1}</td>
+                    <td className="px-6 py-3 font-medium text-white">{signup.name}</td>
+                    <td className="px-6 py-3 text-gray-400">{signup.email}</td>
+                    <td className="px-6 py-3 text-gray-500">
                       {new Date(signup.created_at).toLocaleDateString("en-US", {
                         year: "numeric",
                         month: "short",
