@@ -1,19 +1,22 @@
-# Waitlist App
+# Launchly — AI Marketing on Autopilot
 
 A full-stack SaaS waitlist application built with Next.js, Supabase, and Claude Code.
 
+## Live Demo
+https://waitlist-app-bay.vercel.app
+
 ## Features
-- Public landing page with signup form
+- Premium dark landing page with Launchly branding
+- Waitlist signup form with real-time position number ("You're #4 on the list!")
 - Stores name, email, and signup date in Supabase database
 - Protected admin dashboard with magic link login
-- View all signups with total count
+- View all signups with total count and timestamps
 - Export signups as CSV
+- Mobile friendly
 
 ## Tech Stack
 - Next.js 15 (frontend + API routes)
 - Supabase (database + authentication)
 - Tailwind CSS (styling)
 - Vercel (hosting)
-
-## Live Demo
-https://waitlist-app-bay.vercel.app
+- Built with Claude Code
