@@ -143,6 +143,10 @@ export default function Home() {
           </form>
         )}
       </div>
+
+      <footer className="mt-16 border-t border-white/10 pt-6 w-full max-w-md text-center">
+        <p className="text-xs text-gray-600">© 2026 Launchly Inc. All rights reserved.</p>
+      </footer>
     </main>
   );
 }
