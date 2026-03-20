@@ -37,5 +37,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Failed to save. Please try again." }, { status: 500 });
   }
 
-  return NextResponse.json({ message: "Success" }, { status: 201 });
+  const { count } = await supabase
+    .from("waitlist")
+    .select("*", { count: "exact", head: true });
+
+  return NextResponse.json({ message: "Success", position: count ?? null }, { status: 201 });
 }

@@ -7,6 +7,7 @@ export default function Home() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [position, setPosition] = useState<number | null>(null);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -28,6 +29,7 @@ export default function Home() {
         return;
       }
 
+      setPosition(data.position ?? null);
       setStatus("success");
       setName("");
       setEmail("");
@@ -40,6 +42,11 @@ export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center px-4 py-20 bg-[#0d0d12]">
       <div className="w-full max-w-md">
+        {/* Brand wordmark */}
+        <div className="flex justify-center mb-4">
+          <span className="text-3xl font-bold tracking-tight text-white">Launchly</span>
+        </div>
+
         {/* Tagline badge */}
         <div className="flex justify-center mb-6">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-purple-950 px-3 py-1 text-xs font-medium text-purple-300 ring-1 ring-purple-700">
@@ -61,11 +68,16 @@ export default function Home() {
         </p>
 
         {status === "success" ? (
-          <div className="rounded-2xl bg-purple-950/60 border border-purple-800 p-6 text-center">
-            <div className="text-3xl mb-2">🎉</div>
-            <p className="font-semibold text-purple-200 text-lg">
-              You&apos;re on the list!
+          <div className="rounded-2xl bg-purple-950/60 border border-purple-800 p-8 text-center">
+            <div className="text-4xl mb-3">🎉</div>
+            <p className="font-extrabold text-white text-2xl tracking-tight mb-1">
+              You&apos;re in!
             </p>
+            {position !== null && (
+              <p className="text-4xl font-black bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent my-3">
+                #{position} on the list
+              </p>
+            )}
             <p className="text-purple-400 text-sm mt-1">
               We&apos;ll be in touch when we launch.
             </p>
