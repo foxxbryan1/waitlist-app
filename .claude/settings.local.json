@@ -7,7 +7,8 @@
       "Bash(npm_config_cache=/tmp/npm-cache npm init -y 2>&1)",
       "Bash(npm_config_cache=/tmp/npm-cache npm install 2>&1)",
       "Bash(npm_config_cache=/tmp/npm-cache npx next build 2>&1)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(node -e \":*)"
     ]
   }
 }

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Waitlist App",
-  description: "Join our waitlist to get early access.",
+  title: "Launchly — AI Marketing on Autopilot",
+  description: "Join the Launchly waitlist for early access to AI-powered marketing",
 };
 
 export default function RootLayout({
