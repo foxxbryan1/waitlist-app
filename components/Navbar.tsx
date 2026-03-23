@@ -39,7 +39,7 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <div className="hidden md:block">
             <Link
-              href="/"
+              href="/#signup"
               className="rounded-lg bg-purple-600 px-4 py-2 text-sm font-semibold text-white hover:bg-purple-500 transition shadow-lg shadow-purple-900/40"
             >
               Get started
@@ -86,7 +86,7 @@ export default function Navbar() {
           ))}
           <div className="pt-2">
             <Link
-              href="/"
+              href="/#signup"
               onClick={() => setOpen(false)}
               className="block w-full text-center rounded-lg bg-purple-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-purple-500 transition"
             >
