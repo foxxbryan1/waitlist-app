@@ -42,7 +42,7 @@ export default function Navbar() {
               href="/#signup"
               className="rounded-lg bg-purple-600 px-4 py-2 text-sm font-semibold text-white hover:bg-purple-500 transition shadow-lg shadow-purple-900/40"
             >
-              Get started
+              Try it free
             </Link>
           </div>
 
@@ -90,7 +90,7 @@ export default function Navbar() {
               onClick={() => setOpen(false)}
               className="block w-full text-center rounded-lg bg-purple-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-purple-500 transition"
             >
-              Get started
+              Try it free
             </Link>
           </div>
         </div>
