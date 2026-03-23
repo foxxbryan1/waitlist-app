@@ -65,7 +65,7 @@ export default function Home() {
       <div className="w-full max-w-md">
         {/* Brand wordmark */}
         <div className="flex justify-center mb-4">
-          <span className="text-3xl font-bold tracking-tight text-white">Captivly</span>
+          <span className="text-4xl font-black tracking-tight bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">⚡ Captivly</span>
         </div>
 
         {/* Tagline badge */}
