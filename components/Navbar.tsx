@@ -18,9 +18,9 @@ export default function Navbar() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-1.5 text-white font-bold text-xl tracking-tight">
+          <Link href="/" className="flex items-center gap-1.5 font-bold text-xl tracking-tight">
             <span className="text-purple-400">⚡</span>
-            Captivly
+            <span className="bg-gradient-to-r from-purple-400 to-fuchsia-400 bg-clip-text text-transparent">Captivly</span>
           </Link>
 
           {/* Desktop nav links */}
