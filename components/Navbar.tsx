@@ -20,7 +20,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-1.5 text-white font-bold text-xl tracking-tight">
             <span className="text-purple-400">⚡</span>
-            Launchly
+            Captivly
           </Link>
 
           {/* Desktop nav links */}

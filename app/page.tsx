@@ -65,7 +65,7 @@ export default function Home() {
       <div className="w-full max-w-md">
         {/* Brand wordmark */}
         <div className="flex justify-center mb-4">
-          <span className="text-3xl font-bold tracking-tight text-white">Launchly</span>
+          <span className="text-3xl font-bold tracking-tight text-white">Captivly</span>
         </div>
 
         {/* Tagline badge */}
@@ -84,7 +84,7 @@ export default function Home() {
           </span>
         </h1>
         <p className="text-center text-gray-400 mb-10 leading-relaxed">
-          Launchly uses AI to write your campaigns, schedule your posts, and
+          Captivly uses AI to write your campaigns, schedule your posts, and
           grow your audience — automatically.
         </p>
 
@@ -196,7 +196,7 @@ export default function Home() {
       </div>
 
       <footer className="mt-10 border-t border-white/10 pt-6 w-full max-w-2xl text-center">
-        <p className="text-xs text-gray-600">© 2026 Launchly Inc. All rights reserved.</p>
+        <p className="text-xs text-gray-600">© 2026 Captivly Inc. All rights reserved.</p>
       </footer>
     </main>
   );

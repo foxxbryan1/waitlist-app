@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Pricing — Launchly",
+  title: "Pricing — Captivly",
   description: "Simple, transparent pricing for every stage of growth",
 };
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Features — Launchly",
+  title: "Features — Captivly",
   description: "Everything you need to grow faster with AI-powered marketing",
 };
 
@@ -78,7 +78,7 @@ export default function FeaturesPage() {
           </span>
         </h1>
         <p className="text-gray-400 text-lg leading-relaxed max-w-xl mx-auto">
-          Launchly combines AI, automation, and deep analytics into one platform — so you can focus on building, not marketing.
+          Captivly combines AI, automation, and deep analytics into one platform — so you can focus on building, not marketing.
         </p>
       </section>
 

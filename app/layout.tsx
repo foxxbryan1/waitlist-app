@@ -3,8 +3,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "Launchly — AI Marketing on Autopilot",
-  description: "Join the Launchly waitlist for early access to AI-powered marketing",
+  title: "Captivly — AI Marketing, Fully Captivated",
+  description: "Join the Captivly waitlist for early access to AI-powered marketing",
 };
 
 export default function RootLayout({

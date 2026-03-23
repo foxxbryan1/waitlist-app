@@ -124,7 +124,7 @@ export default function AdminPage() {
       <main className="min-h-screen flex flex-col items-center justify-center px-4 bg-[#0d0d12]">
         <div className="w-full max-w-sm">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold tracking-tight text-white mb-1">Launchly</h1>
+            <h1 className="text-3xl font-bold tracking-tight text-white mb-1">Captivly</h1>
             <p className="text-sm text-purple-400">Admin Dashboard</p>
           </div>
 
@@ -182,7 +182,7 @@ export default function AdminPage() {
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h1 className="text-2xl font-bold tracking-tight text-white">Launchly</h1>
+            <h1 className="text-2xl font-bold tracking-tight text-white">Captivly</h1>
             <p className="text-sm text-purple-400 mt-0.5">Admin Dashboard</p>
           </div>
           <button
